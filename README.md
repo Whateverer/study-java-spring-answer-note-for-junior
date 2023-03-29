@@ -172,9 +172,42 @@ API도 큰 범주에서는 인터페이스다.
 	
 Dependency Injection은 의존성 주입(DI)    
 Dependency Inversion은 의존성 역전(SOILD-DIP)    
-- 의존성 역전 : 의존성 역전은 화살표의 방향을 반대로 바꾸는 기술
+- 의존성 역전 : 의존성 역전은 화살표의 방향을 반대로 바꾸는 기술    
 ex) MacDonald -> HamburgerChef 를    
  MacDonald -> (interface) Chef <- HamburgerChef 로 바꾸는 것
-- 의존성 역전과 스프링 
+- 의존성 주입과 책임 : 생성자 의존성 주입이 7개 이상 넘어간다면, 파라미터 의존성 주입이 4개 이상 넘어간다면 클래스 분할이나 메소드 분할을 고려해야 한다.
+				  
 ### 3. 의존성 조언
+- 의존성을 드러내라
+의존성이 숨겨진 예시 
+```java
+class User {
+	private long lastLoginTimestamp;
+								  
+	public void login() {
+		this.lastLoginTimestamp = Clock.systemUTC().millis();
+	}							  
+	
+}
+```
+외부에서 보면 login은 분명 Clock에 의존적임.    
+개발자들이 의존성을 실수로 숨기게 되는 흔한 케이스 : 시간, 랜덤(실행할 때마다 "변하는 값")    
+- 변하는 값은 외부에서 주입받아라.    
+테스트를 강조하는 이유 : 의존성이 제대로 풀려있지 않다면 테스트가 힘들기 때문.    
+- 변하는 값을 추상화시켜라.    
+런타임 의존성과 컴파일 타임 의존성을 다르게 하라.
+**의존성을 추상화 시키는 방식 중요!!!**
+
 ### 4. CQRS
+Command and Query Responsebility Segregation
+명령과 질의의 책임 분리    
+: 하나의 메소드는 명령이나 쿼리여야하며, 두 가지 기능을 모두 가져서는 안된다. 명령은 객체의 상태를 변경할 수 있지만, 값을 반환하지 않는다. 쿼리는 값을 반환하지만 객체를 변경하지 않는다.
+- Command
+명령메소드는 객체의 상태를 변경시키고 return 값을 가지지 않는다.    
+- Query     
+질의 : 상태를 물어보는 메소드, 상태를 변경해서는 안된다.
+
+더 알아보기
+1. 정답이 없다 (개발자는 계속 trade-off를 해야한다.)
+2. 리팩토링 Working Effectively with Legacy code 책 추천
+3. 다양한 설계 조언
