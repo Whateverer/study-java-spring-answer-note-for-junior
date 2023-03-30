@@ -288,4 +288,13 @@ Controller, Service, Entity, VO는 구현체로 구현되어도 상관없다.
 - 서비스에 setter가 존재한다면 지우기
 - 반드시 생성자 주입으로 사용.
 
+## 기타 꿀팁
+### 1. JPA
+- JPA는 기술 명세이고 Hibernate는 구현체이다. 
+![image](https://user-images.githubusercontent.com/104114755/228727426-a7064513-0100-45f4-9287-e60e047ac3f9.png)
 
+연관 관계의 주인은 외래키이다. 
+- n + 1문제    
+해결법 : 1. EntityGraph 2. Fetch join
+	
+### 2. 기타
