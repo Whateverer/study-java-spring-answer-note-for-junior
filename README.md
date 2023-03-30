@@ -263,3 +263,15 @@ Command and Query Responsebility Segregation
  Event Driven Design
  OOP (Object Oriented Programming)
  
+## 어디까지 추상화해야 하는가?
+### 1. 추상화
+추상화 : 모듈을 격리하고 인터페이스를 만드는 과정, 책임을 선별하는 과정
+- 응용 프로그램 서비스는 구체다.    
+Controller, Service, Entity, VO는 구현체로 구현되어도 상관없다.    
+서비스와 컨트롤러는 한번 생성으로 영원히 같은 일을 할 수 있는 객체여야 한다.
+
+### 2. Overview
+![image](https://user-images.githubusercontent.com/104114755/228725677-09ba654f-5671-4280-b256-bc79c6496647.png)
+
+
+
