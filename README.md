@@ -414,4 +414,23 @@ SSL 인증서 등록 방식(1)
  더 알아보기    
 1. nginx
 2. OpenSSL
-3. CA 기관 - Let's encrypt	
+3. CA 기관 - Let's encrypt
+	    
+## 인프라 용어 정리 : Xaas, 컨테이너 등 
+### 1. 장비
+### 2. XaaS, 온프레미스, 온디맨드
+- IaaS : Infrastructure as a Service, VM을 제공하는 Service
+- SaaS : Software as a Service, ex) 구글 드라이브, 슬랙
+
+- 온프레미스 : 전산실 서버에 직접 설치해 운영하는 서비스를 전달하는 방식
+- 온디맨드 : 수요가 있을 때 서비스하는 방식
+### 3. PM, VM, Container, Docker
+- PM : Physical Machine, 컴퓨터
+- VM : Virtual Machine, 가상머신
+- Container : VM 보다는 조금 더 가벼운 방식의 가상화 기술, cgroups를 제공해야 사용 가능
+- Docker : 컨테이너를 독립된 가상환경으 여러 개 띄울 수 있다.
+
+### 4. VPN, VDI
+- VPN (Virtual Private Network) : 공중 네트워크를 통해 한 회사나 몇몇 단체가 내용을 바깥 사람에게 드러내지 않고 통신할 목적으로 쓰이는 사설 통신망이다. 
+
+	    
