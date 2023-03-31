@@ -320,3 +320,29 @@ Controller, Service, Entity, VO는 구현체로 구현되어도 상관없다.
 
 더 알아보기    
 테스트와 CI/CD
+	
+## 테스트에 필요한 개념
+- SUT : System under test(테스트 하려는 대상)
+- TDD : 테스트 주도 개발 
+1. 깨지는 테스트를 먼저 작성한다.
+2. 깨지는 테스트를 성공시킨다.
+3. 리팩토링한다.	
+- BDD : Behaviour driven developer (given - when - then), 메소드 위주의 테스트 코드보다 시나리오에 기반한 테스트를 하는 방식
+- 불규칙한 테스트(flaky) 깨지기 쉬운 테스트(brittle)
+- 상호작용 테스트보다는 상태를 테스트하는 게 좋다.
+- 테스트 더블 : 가짜 객체로 테스트 하는 것
+	+ Dummy : 아무런 동작하지 않는 객체
+	+ Fake : 가짜 객체, 자체 로직을 가지고 있음
+	+ Stub : 외부 연동하는 컴포넌트들에 많이 사용
+	+ Mock : 사실상 테스트 더블과 동일한 의미로 사용됨.
+	+ Spy : 모든 메소드를 호출을 기록하고 있는 객체 
+- 도구 
+	+ Mock 프레임워크
+
+더 알아보기    
+1. BDD
+2. PARAMETERIZED TEST
+3. MOCKIST | CLASSICIST
+4. TFD : 테스트 우선개발
+
+	
