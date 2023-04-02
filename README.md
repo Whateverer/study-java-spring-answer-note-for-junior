@@ -452,8 +452,21 @@ SSL 인증서 등록 방식(1)
 - 개발자들이 아예 OS까지 포함된 컨테이너까지 지정하여 개발할 수 있게됨
 - 빌드 도구 : Jenkins + docker 
 - 빌드된 파일 : Docker image
-- 배포 도구 : ?
-	    
+- 배포 도구 : Kubernetes ( + argo cd)
+
+컨테이너 오케스트레이션
+쿠버네티스, 도커 스웜
+
 ### 2. 실제 구성
+nginx -> ingress -> service -> pod
+요청이 오는 흐름ingress에 오는 요청을 servic로 보내고, pod로 보낸다. (도커를 여러 개 띄울 수 있는 것 pod)
+
 ### 3. LBaaS, Node
+- LBaaS : 쿠버네티스의 service단을 ingress 앞에 두는 것
+
 ### 4. 빌드/배포
+- 개발자 -> github 훅 -> 젠킨스 -> 도커이미지 생성 ->컨테이너 레지스트리에 등록
+
+더 알아보기
+1. probe : 쿠버네티스에게 헬스체크를 어떻게 하는지 알려주는 방식
+2. resource 
