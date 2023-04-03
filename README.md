@@ -470,3 +470,47 @@ nginx -> ingress -> service -> pod
 더 알아보기
 1. probe : 쿠버네티스에게 헬스체크를 어떻게 하는지 알려주는 방식
 2. resource 
+
+## NoSQL 정리
+### 1. 목적에 맞는 다양한 사용
+1) 중앙화 된 캐시가 필요한 경우
+- 조회수나 좋아요 등 빠르게 변하는 값을 저장 -> Redis를 많이 사용
+2) 메시지 큐가 필요한 경우
+- 통신하는 데 있어서 데이터 유실이 걱정될 경우 시스템 큐를 둘 수도 있다. -> kafka, RabbitMQ, redis
+3) 검색이 필요한 경우
+- 검색 기능을 개발자가 일일이 만들지 않고 -> Elasticsearch, Solr 사용 
+4) 시계열 차트를 그려야하는 경우
+- influxdb, OPENTSDB, druid 등
+
+### 2. Key-value DB
+- redis : 서버 자체가 하나의 거대한 Map(or dictionary)으로 구성되어 있음. 이 Map이 메모리에 올라와있어 빠르게 데이터를 가져올 수 있음.     
+싱글 스레드, 샤딩과 클러스터 모드, Keys 사용 금지 
+	
+### 3. Wide-column DB
+: 대량의 데이터를 동적인 칼럼을 갖는 테이블에 read/write 하는 DB, 데이터 압축, 분산처리에 특화되어 있음.
+- RDBMS와 다르게 relation이 없어 write 성능이 빠르다.
+- Cassandra
+Consistent hashing(Cassandra에서 데이터를 저장하는 방법), Partition key가 중요, Write 성능이 매우 좋음
+- HBase	
+	
+### 4. Document DB
+- MongoDB : 트랜잭션 지원, 전문 검색 기능 제공
+- elasticsearch : 인덱스(데이터 스키마), 인덱스가 많아지면 X, update가 없음, 통계내기에 상당히 유용
+	
+### 5. Graph DB
+- neo4j : 사회적 관계망을 표현하는데 사용하기 좋은 DB
+	
+### 6. Message system
+- kafka : topic / partition / consumer group / consumer 4 개의 개념    
+Producer가 Topic에 데이터를 publish하면 Topic은 데이터의 key값에 따라서 특정 파티션으로 데이터를 보낸다(분산) -> 파티션을 바라보고 있는 컨슈머들이 데이터를 들고와서 처리    
+하나의 파티션에는 하나의 컨슈머만 붙을 수 있다.
+	
+- RabbitMQ : 자체 관리 페이지 GUI, Topic exchange, Fanout exchange    
+솔루션 자체가 하나의 Queue로 동작
+	
+
+더 알아보기    
+1. Lucene 전문 검색 라이브러리
+2. ELK
+3. Hadoop
+4. Zookeeper : 분산환경의 클러스터 
