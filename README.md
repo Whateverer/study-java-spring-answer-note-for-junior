@@ -23,13 +23,13 @@ Q001. 순차 지향 프로그래밍과 절차 지향 프로그래밍의 차이?
 축약어 - 대문자로 표현하지X ex) memberDTO (x) -> memberDto    
 
 ### 2. 동사
-- get vs find
-get -> return type이 T인 경우(항상 인스턴스를 돌려받을 것을 가정)
+- get vs find    
+get -> return type이 T인 경우(항상 인스턴스를 돌려받을 것을 가정)    
 find -> return type이 Optional<T>인 경우(null인 경우가 있음)
 
 - get 남발하지 않기!
-일반적으로 get은 내가 갖고있는 멤버변수를 그대로 돌려준다는 의미가 강함.
-	ex) 모든 값을 더해서 가져오는 것 : getSumPrice(x) -> sumPrice(o)
+일반적으로 get은 내가 갖고있는 멤버변수를 그대로 돌려준다는 의미가 강함.    
+ex) 모든 값을 더해서 가져오는 것 : getSumPrice(x) -> sumPrice(o)
 	
 ### 3. 롬복
 - getter setter를 남발하지 마라 : 캡슐화를 망치는 주범, 객체를 수동적이게 만듦.
@@ -212,7 +212,7 @@ Command and Query Responsebility Segregation
 2. 리팩토링 Working Effectively with Legacy code 책 추천
 3. 다양한 설계 조언
 				  
-기타 팁 
+#### 기타 팁   
 프로그래머 vs 소프트웨어 엔지니어    
 시간, 규모, 트레이드 오프를 고려할 줄 아는 사람이 엔지니어다.
 
