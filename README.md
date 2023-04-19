@@ -2,11 +2,11 @@
 인프런 강의 - Java/Spring 주니어 개발자를 위한 오답노트 정리
 
 # 오리엔테이션
-Q001. 순차 지향 프로그래밍과 절차 지향 프로그래밍의 차이?
-순차 지향 언어 - 어셈블러
-절차 지향 언어 - C언어
-순차 지향 프로그래밍 - Sequential oriented programming
-절차 지향 프로그래밍 - Procedure oriented programming
+Q001. 순차 지향 프로그래밍과 절차 지향 프로그래밍의 차이?	    
+순차 지향 언어 - 어셈블러    
+절차 지향 언어 - C언어    
+순차 지향 프로그래밍 - Sequential oriented programming    
+절차 지향 프로그래밍 - Procedure oriented programming    
 절차 지향 프로그래밍은 함수 지향 프로그래밍
 
 # 주니어 개발자가 많이 하는 개발 실수
