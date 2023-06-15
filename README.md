@@ -179,6 +179,7 @@ ex) MacDonald -> HamburgerChef 를
 				  
 ### 3. 의존성 조언
 - 의존성을 드러내라    
+
 의존성이 숨겨진 예시 
 ```java
 class User {
