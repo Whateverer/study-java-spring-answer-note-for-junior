@@ -675,6 +675,22 @@ Controller - Service - Repository가 바로 연결되어 있는 구조
 ### Parameter vs Arguments
 Parameter - 매개변수
 Argument - 전달인자 
+
 ### 프론트와 협업
+
 ### early return
+if문을 미리 뻬서 return 처리하는 것
+
 ### release candidate (RC)
+출시 후보(release candidate)는 마지막 제품이 될 가능성이 있는 시험판(Beta)으로, 상당한 버그가 나타나지 않으면 출시할 준비가 되었음을 의미한다. 프리뷰 릴리즈 버전으로도 불린다.
+
+### 기타
+- CAP 이론: 일관성, 가용성, 파티션 감내
+- 가십 프로토콜 (Gossip protocol) : 노드의 상태를 소문 전파하듯이 퍼뜨리는 방식, 전염병 프로토콜이라고 불림
+- Quorum consensus(정족수 합의)
+  + strict quorum
+  + sloppy quorum
+- hinted handoff (임시 위탁)
+- 블룸필터 vs 해시테이블
+- rpc vs grpc
+- polling, long polling, websocket
